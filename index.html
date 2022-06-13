@@ -25,13 +25,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
 <style>
-
 body,h1,h2,h3,h4,h5 {font-family: 'Roboto', sans-serif;}
 body {font-size:16px; background-color: black; color: white}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
-
 </style>
+
+<script>
+  // Javascript to open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  
+  // Javascript Popup Window Image Gallery (Modal) Full Screen
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+</script>
+
 </head>
 <body>
 
@@ -71,16 +91,16 @@ body {font-size:16px; background-color: black; color: white}
   <div class="w3-row-padding">
     <div class="w3-half">
       <img src="images/img7.png" style="width:100%" onclick="onClick(this)" alt="In studio" class="w3-hover-grayscale">
-      <img src="images/img3.png" style="width:100%" onclick="onClick(this)" class="w3-hover-grayscale">
+      <img src="images/img3.png" style="width:100%" onclick="onClick(this)" alt="In studio 2" class="w3-hover-grayscale">
      
     </div>
 
-    <div class="w3-half" style="padding-bottom:95px">
-      <img src="images/img2.png" style="width:100%" onclick="onClick(this)" class="w3-hover-grayscale">
-      <img src="images/img5.png" style="width:100%" onclick="onClick(this)" class="w3-hover-grayscale">
+    <div class="w3-half" style="margin-bottom:95px">
+      <img src="images/img2.png" style="width:100%" onclick="onClick(this)" alt="In studio 3" class="w3-hover-grayscale">
+      <img src="images/img5.png" style="width:100%" onclick="onClick(this)" alt="In studio 4" class="w3-hover-grayscale">
     </div>
 
-  <!-- Istruzioni per immagini full screen on click--> 
+  <!-- Istruzioni per immagini full screen on click: Javascript Popup Window Image Gallery (Modal) Full Screen --> 
   <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
     <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
     <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
@@ -88,6 +108,7 @@ body {font-size:16px; background-color: black; color: white}
       <p id="caption"></p>
     </div>
   </div>
+</div>
 
   <!-- Chi Siamo -->
   <div class="w3-container" id="chisiamo">
@@ -152,7 +173,6 @@ body {font-size:16px; background-color: black; color: white}
     <h1 class="w3-xxxlarge w3-text-red"><b>Eventi.</b></h1>
     <hr style="width:50px;border:5px solid #A5ADAD" class="w3-round">
     <p>Coming soon.</p>
-  
   </div>
   
   <!-- Contatti -->
@@ -160,7 +180,7 @@ body {font-size:16px; background-color: black; color: white}
     <h1 class="w3-xxxlarge w3-text-red"><b>Contatti.</b></h1>
     <hr style="width:50px;border:5px solid #A5ADAD" class="w3-round">
     <p>Per info e collaborazioni contattateci alla mail <a href="mailto:bladeproduction22@gmail.com">bladeproduction22@gmail.com</a> o compilate il form qui sotto :)</p>
-    <form action="/action_page.php" target="_blank">
+    <form action="mailto:bladeproduction22@gmail.com" method="post" enctype="text/plain">
       <div class="w3-section">
         <label>Nome</label>
         <input class="w3-input w3-border" type="text" name="Name" required>
@@ -176,41 +196,24 @@ body {font-size:16px; background-color: black; color: white}
       <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
     </form>  
   </div>
-
+  
   <!-- Social Media -->
-<div class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <div class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <h4>Seguici sui nostri social</h4>
   <a class="w3-button w3-large w3-pale-red" href="https://www.instagram.com/bladeproductionmusic/" title="Facebook"><i class="fa fa-facebook"></i></a>
   <a class="w3-button w3-large w3-pale-red" href="https://www.instagram.com/bladeproductionmusic/" title="Twitter"><i class="fa fa-twitter"></i></a>
   <a class="w3-button w3-large w3-pale-red" href="https://www.instagram.com/bladeproductionmusic/" title="Instagram"><i class="fa fa-instagram"></i></a>
 </div>
 
+<!-- Creative Commons -->
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0;" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+
 <!-- End page content -->
 </div>
 
 <!-- Footer -->
-<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right"><a href="documentazione.html" title="W3.CSS" target="_blank" class="w3-hover-opacity">Documentazione</a></p></div>
-
-<script>
-// Javascript to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-</script>
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right"><a href="documentazione.html" title="W3.CSS" target="_blank" class="w3-hover-opacity">Documentazione</a></p>
+</div>
 
 </body>
 </html>

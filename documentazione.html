@@ -25,21 +25,42 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 
 <style>
-
 body,h1,h2,h3,h4,h5 {font-family: 'Roboto', sans-serif;}
 body {font-size:16px; background-color: black; color: white}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
 .w3-half img:hover{opacity:1}
-
 </style>
+
+
+<script>
+  // Javascript to open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+   
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+  
+  // Modal Image Gallery Full Screen
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+  </script>
+
 </head>
 <body>
 
 <!-- Sidebar/menu (navigazione) -->
-<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"><br>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
   <div class="w3-container">
-    <h3 class="w3-padding-64"><b>BLADE</br>PRODUCTION</br>MUSIC</b></h3>
+    <h3 class="w3-padding-64"><b>BLADE<br>PRODUCTION<br>MUSIC</b></h3>
   </div>
   <div class="w3-bar-block">
     <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
@@ -62,13 +83,22 @@ body {font-size:16px; background-color: black; color: white}
 <!-- !PAGE CONTENT! -->
 <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
+<!-- Istruzioni per immagini full screen on click --> 
+<div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+  <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption"></p>
+  </div>
+</div>
+
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
     <h1 class="w3-jumbo"><b>Documentazione</b></h1>
   </div>
   
   <!-- Abstract -->
-  <div class="w3-container" id="services">
+  <div class="w3-container">
     <h2 class="w3-xxxlarge w3-text-red"><b>Abstract.</b></h2>
     <hr style="width:50px;border:5px solid #A5ADAD" class="w3-round">
     <p>Questo sito web nasce con l’idea di rendere due amici produttori visibili a un pubblico più vasto, poiché stanno dando nascita ad un’etichetta discografica che crea musica partendo da zero, e ritengo che siano estremamente bravi. 
@@ -76,7 +106,7 @@ body {font-size:16px; background-color: black; color: white}
   </div>
   
   <!-- Project Management Plan -->
-    <div class="w3-container" id="designers" style="margin-top:75px">
+    <div class="w3-container" style="margin-top:75px">
       <h2 class="w3-xxxlarge w3-text-red"><b>Project Management Plan.</b></h2>
       <hr style="width:50px;border:5px solid #A5ADAD" class="w3-round">
 
@@ -91,12 +121,12 @@ body {font-size:16px; background-color: black; color: white}
 
       <h3><b>Competitors</b></h3>
      
-      <p>Un sito simile che affronta lo stesso tema: <a href="https://www.2ndroofmusic.com/">https://www.2ndroofmusic.com/</a></p>
+      <p>Un sito simile che affronta lo stesso tema: <a href="https://www.2ndroofmusic.com/">2ndroofmusic.com</a></p>
       <p>Il sito è di due produttori, ma la struttura del sito è completamente diversa. Il sito dispone di un menù nascosto, con all’interno una sezione About, una per lo Shop, una per la discografia e una per la Home. Ritengo che il target utente si avvicini allo stesso del sito che ho creato, ma forse io personalmente avrei disposto diversamente i video, che occupano l’intero background non appena accedi al sito. Mi sembra una bella idea quella di collegare i commenti social al sito web, perché usandoli forse più quotidianamente automaticamente rende aggiornato anche il web.  
 
       </p>
 
-       <p>Un sito con un target utente diverso: Un sito con target utente diverso è https://www.lorenzosebastiani.com/ </p>
+      <p>Un sito con target utente diverso: <a href="https://www.lorenzosebastiani.com/">lorenzosebastiani.com</a></p>
       <p>Il sito espone le creazioni di un produttore musicale. Nella bio è molto preciso per quanto concerne la nascita del suo lavoro e contemporaneamente della sua passione. Il target utente è completamente diverso poiché si rivolge a professionisti e non, che ricercano un arrangiatore e produttore musicale con molti anni di esperienza e di successo. Personalmente ritengo che il sito sia ben fatto, ma forse un po’ troppo dispersivo e lungo, con troppe pagine oltre al menù principale.
       </p>
 
@@ -112,11 +142,14 @@ body {font-size:16px; background-color: black; color: white}
       <img src="images/wireframe2.jpg" style="width:50%" onclick="onClick(this)" alt="Wireframe pagina Documentazione">
       
       <h4><b>Look and feel</b></h4>
-      <p>Per la scelta dei fonts ho usato Google Fonts, e la mia scelta è ricaduta su Roboto (sans serif).
+      <p>Per la scelta dei fonts ho usato Google Fonts e la mia scelta è ricaduta su Roboto (sans serif).
       Per la scelta dei colori ho usato il sito Color-Name, per il grigio elettrico, e ho impostato il nero per la scelta del colore del background.
-      </p>
-      <p>ALTRO DA SCRIVERE
-      </p>
+      <a href="https://unsplash.com/s/photos/electronic-music">unsplash.com/s/photos/electronic-music</a>. Il resto delle immagini inserite mi sono state mandate direttamente e sono di proprietà degli artisti.
+      
+      Alcune immagini le ho prese dal sito <a href="https://unsplash.com/s/photos/electronic-music">Unsplash</a>. Per non incorrere in violazione del diritto d'autore ho voluto accertarmi che la <a href="https://help.unsplash.com/en/articles/2612315-can-i-use-unsplash-photos-for-personal-or-commercial-projects">licenza di Unsplash</a> permettesse di utilizzare i files per la maggior parte dei progetti commerciali, personali e per uso editoriale.
+      Per quanto concerne gli effetti particolari, ho aggiunto un effetto in bianco e nero quando si passa sulle immagini.
+    
+    </p>
 
       <h3><b>Linguaggi e strumenti</b></h3>
       <p>I linguaggi che ho utilizzato sono <i>HTML</i>, <i>CSS</i> e <i>JavaScript</i>. 
@@ -126,9 +159,10 @@ body {font-size:16px; background-color: black; color: white}
       Ho inoltre modificato la grandezza delle immagini su Canva per renderle adeguate al sito web.<br>
       Per modificare i fonts ho utilizzato Google Fonts, e <a href="https://www.color-name.com/">color-name.com</a> per modificare i colori. Infine per la pubblicazione ho utilizzato GitHub.
       </p>
+    </div>
 
-      <!-- Project Management Plan -->
-      <div class="w3-container" id="designers" style="margin-top:75px">
+      <!-- Communication Strategy -->
+      <div class="w3-container" style="margin-top:75px">
       <h2 class="w3-xxxlarge w3-text-red"><b>Communication Strategy.</b></h2>
       <hr style="width:50px;border:5px solid #A5ADAD" class="w3-round">
       <h3><b>Communication Strategy</b></h3>
@@ -144,7 +178,7 @@ body {font-size:16px; background-color: black; color: white}
       </p>
 
       <h3><b>Target audience e messaggio</b></h3>
-     La target audience è under 30 perché credo coinvolga più persone giovani. Solitamente, questo target di riferimento è raggiungibile tramite social media, o eventi programmati; un target secondario potrebbe coinvolgere persone di un’età più avanzata, dai 30 in su senza un margine di età, perché ritengo che come genere di musica possa comprendere molte generazioni.
+      <p>La target audience è under 30 perché credo coinvolga più persone giovani. Solitamente, questo target di riferimento è raggiungibile tramite social media, o eventi programmati; un target secondario potrebbe coinvolgere persone di un’età più avanzata, dai 30 in su senza un margine di età, perché ritengo che come genere di musica possa comprendere molte generazioni.
       </p>
 
       <h3><b>Promozione</b></h3>
@@ -159,10 +193,11 @@ body {font-size:16px; background-color: black; color: white}
       </p>
 
       <img style="margin-bottom:50px" class="w3-round" src="https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png" alt="Flowers in Chania">
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
     
     </div>
   
-
 <!-- End page content -->
 </div>
 
