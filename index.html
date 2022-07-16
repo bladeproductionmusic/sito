@@ -64,8 +64,8 @@ body {font-size:16px; background-color: black; color: white}
   </div>
   <div class="w3-bar-block">
     <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
-    <a href="#chisiamo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Chi Siamo</a>
     <a href="#audio" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Audio</a>
+    <a href="#chisiamo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Chi Siamo</a>
     <a href="#eventi" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Eventi</a>
     <a href="#contatti" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contatti</a>
   </div>
@@ -110,8 +110,30 @@ body {font-size:16px; background-color: black; color: white}
   </div>
 </div>
 
+
+  <!-- Audio -->
+  <div class="w3-container" id="audio" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Audio</b></h1>
+    <hr style="width:50px;border:5px solid #A5ADAD" class="w3-round">
+    
+    <div>
+    
+    <p>DRILL TYPE</p>
+
+    <audio controls>
+      <source src="mp3/drill1.mp3" type="audio/mpeg">
+      <source src="mp3/drill1.wav" type="audio/wav">
+      <source src="mp3/drill1.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+    </audio>
+
+    </div>
+
+  </div>
+
   <!-- Chi Siamo -->
-  <div class="w3-container" id="chisiamo">
+
+  <div class="w3-container" id="chisiamo" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-red"><b>Chi Siamo</b></h1>
     <hr style="width:50px;border:5px solid #A5ADAD" class="w3-round">
     <p>Blade Production Music è un’etichetta discografica nata nel 2022 composta da Riccardo Beltrandi e Andrea Migliori, e ha sede in un piccolo studio di produzione nella provincia di Bologna.</p>
@@ -144,22 +166,6 @@ body {font-size:16px; background-color: black; color: white}
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- Audio -->
-  <div class="w3-container" id="audio" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-red"><b>Audio</b></h1>
-    <hr style="width:50px;border:5px solid #A5ADAD" class="w3-round">
-    
-    <div>
-    <p>Un'anteprima delle nostre composizioni.</p>
-    <p>DRILL TYPE</p>
-    <audio controls>
-      <source src="mp3/drillcut.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-    </audio>
-    </div>
-
   </div>
 
   <!-- Eventi -->
@@ -199,7 +205,7 @@ body {font-size:16px; background-color: black; color: white}
   <div class="w3-container w3-padding-32 w3-theme-d1 w3-center">
   <h4>Seguici sui nostri social</h4>
   <a class="w3-button w3-large w3-pale-red" href="https://www.instagram.com/bladeproductionmusic/" title="Facebook"><i class="fa fa-facebook"></i></a>
-  <a class="w3-button w3-large w3-pale-red" href="https://www.instagram.com/bladeproductionmusic/" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-pale-red" href="https://www.youtube.com/channel/UCs0-ND1OFUORwJfSSit0tAA" title="Youtube"><i class="fa fa-youtube"></i></a>
   <a class="w3-button w3-large w3-pale-red" href="https://www.instagram.com/bladeproductionmusic/" title="Instagram"><i class="fa fa-instagram"></i></a>
 </div>
 
@@ -210,8 +216,7 @@ body {font-size:16px; background-color: black; color: white}
 </div>
 
 <!-- Footer -->
-<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right"><a href="documentazione.html" title="W3.CSS" class="w3-hover-opacity">Documentazione</a></p>
-</div>
+
 
 </body>
 </html>
